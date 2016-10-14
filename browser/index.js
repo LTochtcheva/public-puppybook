@@ -23,13 +23,17 @@ const onSinglePuppyEnter = function (nextRouterState) {
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router history={hashHistory}>
-      <Route path="/">
-        <Route path="puppies" component={AllPuppiesContainer} onEnter={onPuppiesEnter} />
-        <Route path="puppies/:puppyId" component={SinglePuppyContainer} onEnter={onSinglePuppyEnter} />
-        <IndexRoute component={AllPuppiesContainer} />
-      </Route>
-    </Router>
+    <div className="container flexbox-container">
+      <div className="jumbotron">
+        <Router history={hashHistory}>
+          <Route path="/">
+            <Route path="puppies" component={AllPuppiesContainer} onEnter={onPuppiesEnter} />
+            <Route path="puppies/:puppyId" component={SinglePuppyContainer} onEnter={onSinglePuppyEnter} />
+            <IndexRoute component={AllPuppiesContainer} onEnter={onPuppiesEnter} />
+          </Route>
+        </Router>
+      </div>
+    </div>
   </Provider>,
   document.getElementById('app')
 );
