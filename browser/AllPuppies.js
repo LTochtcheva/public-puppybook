@@ -6,7 +6,6 @@ export default class AllPuppies extends React.Component {
 componentDidMount() {
   this.props.onLoadPuppies();
 }
-
   render () {
     return (
       <div>

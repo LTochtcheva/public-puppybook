@@ -14,10 +14,6 @@ export default (state = initialState, action) => {
           newState.allPuppies = action.receivedPuppies;
           break;
 
-        case LOAD_PUPPIES:
-          newState.allPuppies = action.loadedPuppies;
-          break;
-
         default:
           return state;
      }

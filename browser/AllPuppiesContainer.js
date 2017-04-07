@@ -50,7 +50,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     onLoadPuppies: () => {
-      dispatch(loadPuppies(hardCodedData));
+      dispatch(loadPuppies());
     }
   }
 }
