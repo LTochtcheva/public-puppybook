@@ -47,13 +47,7 @@ const mapStateToProps = (state) => {
     allPuppies: state.allPuppies
   }
 };
-const mapDispatchToProps = (dispatch) => {
-  return {
-    onLoadPuppies: () => {
-      dispatch(loadPuppies());
-    }
-  }
-}
-const AllPuppiesContainer = connect(mapStateToProps, mapDispatchToProps)(AllPuppies);
+
+const AllPuppiesContainer = connect(mapStateToProps)(AllPuppies);
 export default AllPuppiesContainer;
 
