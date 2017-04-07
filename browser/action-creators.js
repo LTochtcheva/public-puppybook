@@ -24,3 +24,18 @@
 //       .catch( err => console.error(err));
 //   }
 // }
+export const RECEIVE_PUPPIES = 'RECEIVE_PUPPIES';
+export const LOAD_PUPPIES = 'LOAD_PUPPIES';
+
+export const receivePuppies = (puppies) => {
+  return {
+    type: RECEIVE_PUPPIES,
+    receivedPuppies: puppies
+  }
+};
+export const loadPuppies = (puppies) => {
+  return {
+    type: LOAD_PUPPIES,
+    loadedPuppies: puppies
+  }
+}

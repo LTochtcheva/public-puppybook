@@ -1,23 +1,27 @@
 
-// const initialState = {allPuppies: []};
 
-// export default (state = initialState, action) => {
-//   const newState = Object.assign({}, state);
+import {RECEIVE_PUPPIES} from './action-creators';
+import {LOAD_PUPPIES} from './action-creators';
 
-//     switch(action.type) {
 
-//       case 'GET_ALL_PUPPIES':
-//         newState.allPuppies = action.allPuppies;
-//         break;
+const initialState = {allPuppies: []};
 
-//       case 'LOAD_PUPPIES':
-//         newState.allPuppies = action.puppies;
-//         break;
+export default (state = initialState, action) => {
+  const newState = Object.assign({}, state);
+     switch(action.type) {
 
-//       default:
-//         return state;
-//     }
-//     return newState;
-// }
+        case RECEIVE_PUPPIES:
+          newState.allPuppies = action.receivedPuppies;
+          break;
 
+        case LOAD_PUPPIES:
+          newState.allPuppies = action.loadedPuppies;
+          break;
+
+        default:
+          return state;
+     }
+
+    return newState;
+}
 
