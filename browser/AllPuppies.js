@@ -6,6 +6,7 @@ import {Link} from 'react-router';
 export default class AllPuppies extends React.Component {
 
   render () {
+
     return (
       <div>
         <div className="container flexbox-container">
