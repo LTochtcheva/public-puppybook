@@ -23,7 +23,7 @@ const  hardCodedData = [
 const mapStateToProps = (state) => {
 
   return {
-    allPuppies: state.allPuppiesReducer.allPuppies
+    allPuppies: state.allPuppies
   }
 };
 

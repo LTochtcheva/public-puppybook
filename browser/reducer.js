@@ -10,48 +10,18 @@ const hardcodedPuppy = {
 };
 
 
-const initialState = {allPuppiesReducer: { allPuppies: [] },
-                      selectedPuppyReducer: {selectedPuppy: {} }
-                     }
+const initialState = {allPuppies: [],
+                      selectedPuppy: {}
+                      };
 //const initialAllPuppiesState = {allPuppies: []};
 
-// export default (state = initialState, action) => {
-//   const newState = Object.assign({}, state);
-//   switch(action.type) {
-
-//         case RECEIVE_PUPPIES:
-//           newState.allPuppies = action.receivedPuppies;
-//           break;
-
-//         case SELECT_PUPPY:
-//           newState.selectedPuppy = action.selectedPuppy;
-//           break;
-
-//         default:
-//           return state;
-//      }
-
-//     return newState;
-// };
-const allPuppiesReducer = (state = initialAllPuppiesState, action) => {
+export default (state = initialState, action) => {
   const newState = Object.assign({}, state);
-    switch(action.type) {
+  switch(action.type) {
 
         case RECEIVE_PUPPIES:
           newState.allPuppies = action.receivedPuppies;
           break;
-
-        default:
-          return state;
-     }
-
-    return newState;
-};
-
-const selectedPuppyReducer = (state = initialState, action) => {
-  const newState = Object.assign({}, state);
-
-  switch(action.type) {
 
         case SELECT_PUPPY:
           newState.selectedPuppy = action.selectedPuppy;
@@ -63,8 +33,38 @@ const selectedPuppyReducer = (state = initialState, action) => {
 
     return newState;
 };
+// const allPuppiesReducer = (state = initialAllPuppiesState, action) => {
+//   const newState = Object.assign({}, state);
+//     switch(action.type) {
 
-export default combineReducers(allPuppiesReducer, selectedPuppyReducer);
+//         case RECEIVE_PUPPIES:
+//           newState.allPuppies = action.receivedPuppies;
+//           break;
+
+//         default:
+//           return state;
+//      }
+
+//     return newState;
+// };
+
+// const selectedPuppyReducer = (state = initialState, action) => {
+//   const newState = Object.assign({}, state);
+
+//   switch(action.type) {
+
+//         case SELECT_PUPPY:
+//           newState.selectedPuppy = action.selectedPuppy;
+//           break;
+
+//         default:
+//           return state;
+//      }
+
+//     return newState;
+// };
+
+//export default combineReducers(allPuppiesReducer, selectedPuppyReducer);
 
 
 

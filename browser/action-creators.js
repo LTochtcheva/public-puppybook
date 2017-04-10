@@ -28,3 +28,30 @@ export const loadPuppies = () => {
     .catch(err => console.error(err));
   }
 }
+//this is thunk creator for fetching single puppy from db
+export const selectPuppyAsync = (puppyId) => {
+  return (dispatch) => {
+    axios.get(`/api/puppies/${puppyId}`)
+    .then(res => res.data)
+    .then(puppy => {
+                   console.log('I am a puppy!!');
+                   var msg = new SpeechSynthesisUtterance();
+                  // var voices = window.speechSynthesis.getVoices();
+                   speechSynthesis.getVoices().forEach(function(voice) {
+  console.log(voice.name, voice.default ? voice.default :'');
+});
+                   msg.voice = speechSynthesis.getVoices().filter(function(voice) { return voice.name == 'Whisper'; })[0];
+speechSynthesis.speak(msg);
+                       // msg.voice = voices[5];
+                        msg.voiceURI = 'native';
+                       //msg.volume = 1; // 0 to 1
+                       // msg.rate = 1; // 0.1 to 10
+                        msg.pitch = 1; //0 to 2
+                        msg.text = `Hello! My name is ${puppy.name}. I am so cool`;
+                        msg.lang = 'en-US';
+                   window.speechSynthesis.speak(msg);
+                   dispatch(selectPuppy(puppy))
+                   })
+    .catch(err => console.error(err));
+  }
+}

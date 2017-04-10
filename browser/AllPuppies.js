@@ -12,8 +12,8 @@ export default class AllPuppies extends React.Component {
         <div className="container flexbox-container">
             <div className="jumbotron">
                 <ul className="list-unstyled">
-                    {this.props.allPuppies.map( (puppy,i) => {
-                    return (<li key={i}><Link to={`/puppies/{puppy.id}`}>{puppy.name}</Link></li>)
+                    {this.props.allPuppies.map( (puppy) => {
+                    return (<li key={puppy.id}><Link to={`/puppies/${puppy.id}`}>{puppy.name}</Link></li>)
                     })}
                 </ul>
             </div>
